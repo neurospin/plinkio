@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import numpy as np
 
 plinkAssayDict = {}
@@ -11,5 +13,5 @@ plinkAssayFormatDict['FID'] = '%s'
 plinkAssayFormatDict['IID'] = '%012d'
 plinkAssayFormatDict['GENDER'] = '%1d'
 
-encodeSnpMatrix   = np.array([0,128,1 ,2], dtype=np.uint8)
-encodeMinAllCount = np.array([2,128,1 ,0], dtype=np.uint8)
+encodeSnpMatrix = np.array([0, 128, 1, 2], dtype=np.uint8)
+encodeMinAllCount = np.array([2, 128, 1, 0], dtype=np.uint8)
