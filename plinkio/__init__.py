@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# 
+#
 # __init__.py
 # Created march 2011
 # Author : V Frouin, B Thirion
@@ -22,12 +22,12 @@ In the current state of development it offers:
 
 
 """
-__version__ =  '0.1'
+__version__ = '0.1'
 #import assoc
 #import tests             #TODO : no depends on rpy2 and plink commandline
 #import pheno
 #import covar
-from Genotype  import Genotype, GenotypeAnnotation
+from Genotype import Genotype, GenotypeAnnotation
 from Annotation import Annotation
 #from Pheno import PhenoRead, PhenoRead2, imputePhenoAndFix
 from genodata import GenoData

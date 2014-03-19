@@ -11,9 +11,9 @@ Utility class for annotations on various chip manufacturer
 #import annot.assay
 
 import sqlite3
-from   os         import path
-from   glob       import glob
-from   numpy      import where
+from os import path
+from glob import glob
+from numpy import where
 
 
 class Annotation(object):
@@ -39,22 +39,22 @@ class Annotation(object):
         #self._pdb = glob(path.join(path.dirname(__file__), "data","*.sql"))
         self._pdb = glob(path.join(resources, "*.sql"))
 
-        if source == None:
+        if source is None:
             print [(path.basename(x).split("_")[1],
                    path.basename(x))for x in self._pdb]
             return
         platform = source + '.sql'
         #print platform
         #print [path.basename(x).split("_")[1] for x in self._pdb]
-        ind = where([path.basename(x).split("_")[1] ==\
+        ind = where([path.basename(x).split("_")[1] ==
                      platform for x in self._pdb])
         chipAnnotDb = self._pdb[ind[0]]
         self._conn = sqlite3.connect(chipAnnotDb)
         self._sql = self._conn.cursor()
-        if not(MaskWithGenotype == None):
-            self._maskWithGenotype = set(MaskWithGenotype.snpList())
-        else:
+        if MaskWithGenotype is None:
             self._maskWithGenotype = None
+        else:
+            self._maskWithGenotype = set(MaskWithGenotype.snpList())
 
     def __execute__(self, cmd):
         """
@@ -98,7 +98,7 @@ class Annotation(object):
                WHERE       dbsnp.stop > %d \
                       AND  dbsnp.stop < %d \
                       AND  dbsnp.chrom = %s" % (start, stop, chrom[3:])
-        if (self._maskWithGenotype == None):
+        if self._maskWithGenotype is None:
             return [str(x[0]) for x in self.__execute__(cmd)]
         else:
             query_set = set([str(x[0]) for x in self.__execute__(cmd)])
@@ -116,13 +116,12 @@ class Annotation(object):
         list of SNP (rsname)
         """
         cmd = "SELECT name FROM dbsnp \
-               WHERE dbsnp.chrom = %s" % ( chrNum )
-        if (self._maskWithGenotype == None):
+               WHERE dbsnp.chrom = %s" % (chrNum)
+        if self._maskWithGenotype is None:
             return [str(x[0]) for x in self.__execute__(cmd)]
         else:
             query_set = set([str(x[0]) for x in self.__execute__(cmd)])
             return list(query_set.intersection(self._maskWithGenotype))
-
 
     def getGeneByRs(self, rsname):
         """
