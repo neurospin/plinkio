@@ -3,11 +3,12 @@
 from distutils.core import setup
 
 setup(
-    name="igutils",
+    name="plinkio",
     version="0.1.0",
-    description="Imaging genetics utils",
+    description="PLINK file I/O",
     author="Vincent Frouin",
     author_email="vincent.frouin@cea.fr",
-    packages=["igutils",],
-    long_description="""Utils for imaging genetics""",
+    packages=["plinkio",],
+    long_description="""Started as utilities for imaging/genetics and
+    shrinked down to a module for PLINK I/O""",
     classifiers=[])
