@@ -2,11 +2,11 @@
 Reference documentation
 =======================
 
-.. currentmodule:: igutils
+.. currentmodule:: plinkio
 
 
-The file io rely on few very low-level functions (see bplink.py). There are 2 levels of objects in the design of this version of igutils:
-    #. objects to support the classical concepts of genotype data in the bioinfo community (LIMS, etc.). It includes Annot (that describe the plateform - the chip-), GenoAnnot that brings APIs from the Annot to the Geno object. The Geno object knows the data (encoded and lazy-loaded) and and knows the plateform
+The file io rely on few very low-level functions (see bplink.py). There are 2 levels of objects in the design of this version of plinkio:
+    #. objects to support the classical concepts of genotype data in the bioinfo community (LIMS, etc.). It includes Annotation (that describe the plateform - the chip-), GenotypeAnnotation that brings APIs from the Annotation to the Genotype object. The Genotype object knows the data (encoded and lazy-loaded) and and knows the plateform
     #. objects that offers APIs dedicated to use in a numerical framework. At this level, the objects offer methods to obtained the block of data, information on rows and columns, method to guarantee the integrity of the internal description.
 
 From the objects of the 2nd level, a compound object should be created that would bring multiple-block dataset with information (rows, columns) and with integrity accros the blocks.

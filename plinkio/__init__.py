@@ -5,7 +5,8 @@
 # Author : V Frouin, B Thirion
 #
 """
-igutils is a python module offering various utils for basic Imaging Genetics.
+plinkio was a Python module offering utilities for basic Imaging Genetics.
+It has been shrinked down to a PLINK file I/O module.
 In the current state of development it offers:
 
    #. io on genotype data in bed plink format [#f1]_,
@@ -26,8 +27,8 @@ __version__ =  '0.1'
 #import tests             #TODO : no depends on rpy2 and plink commandline
 #import pheno
 #import covar
-from Geno  import Geno, GenoAnnot
-from Annot import Annot
+from Genotype  import Genotype, GenotypeAnnotation
+from Annotation import Annotation
 #from Pheno import PhenoRead, PhenoRead2, imputePhenoAndFix
 from genodata import GenoData
 #from phenodata import RoiPhenoData

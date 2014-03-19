@@ -11,7 +11,7 @@ Utility classes for genotype data and their context
 """
 
 import numpy as np
-from Geno import Geno
+from Genotype import Genotype
 from os import path
 
 class GenoData(object):
@@ -37,8 +37,8 @@ class GenoData(object):
         my_annot = confobj['genetics']['platform']
         my_resources = confobj['genetics']['resources']
         if path.exists(path.dirname(my_source)):
-            self._genotype = Geno(my_source, \
-                                  annot=my_annot, resources=my_resources)
+            self._genotype = Genotype(my_source, \
+                                      annot=my_annot, resources=my_resources)
         else:
             raise ValueError, 'incorrect path name: ' + path.dirname(my_source)
         #

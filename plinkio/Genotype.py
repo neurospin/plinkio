@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-#  Geno.py
+#  Genotype.py
 #  
 #  Copyright 2013 Vincent FROUIN <vf140245@is207857>
 """
@@ -17,10 +17,10 @@ import numpy as np
 import io.bplinkread
 import annot.chip
 import annot.assay
-import Annot
+import Annotation
 
-class GenoAnnot(object):
-   """GeneAnnot - Provides object/method to support annotation on genoptype data
+class GenotypeAnnotation(object):
+   """Provides object/method to support annotation on genoptype data
    """
    #Fields:
    #-------
@@ -79,7 +79,7 @@ class GenoAnnot(object):
            number of SNP per chromosome in the genotype data.
       """
       chrList =  {}
-      for x in GenoAnnot.autosomeHuman:
+      for x in GenotypeAnnotation.autosomeHuman:
          chrList["Chr%02d"%x] = sum(self._snp['f0']==x)
       return chrList
 
@@ -135,12 +135,12 @@ class GenoAnnot(object):
 
 
 
-class Geno(GenoAnnot):
-   """Geno. Provides object/method to support the data from a genotype file
+class Genotype(GenotypeAnnotation):
+   """Provides object/method to support the data from a genotype file
    """
    #Parameter
    #---------
-      #GenoAnnot : a GenoAnnot object describing the genotyping assay
+      #GenotypeAnnotation : a GenotypeAnnotation object describing the genotyping assay
    
    #Methods
    #-------
@@ -166,9 +166,9 @@ class Geno(GenoAnnot):
                 load=False):
       """
       """
-      GenoAnnot.__init__(self, source, format)
+      GenotypeAnnotation.__init__(self, source, format)
       #try:
-          #self._chipAnnot = Annot.Annot(annot, resources)
+          #self._chipAnnot = Annotation.Annotation(annot, resources)
       #except:
           #self._chipAnnot = None
       self._format = format

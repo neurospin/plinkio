@@ -16,14 +16,14 @@ from   glob       import glob
 from   numpy      import where
 
 
-class Annot(object):
+class Annotation(object):
     """
     """
 
     def __init__(self, source=None, resources=None, MaskWithGenotype=None):
         """
-        Annot(source, Mask) return an Annot object. really ugly. implicit name
-        finding of the sql file.
+        Annotation(source, Mask) return an Annotation object. really ugly.
+        implicit name finding of the sql file.
 
         Parameter
         ---------
@@ -33,7 +33,7 @@ class Annot(object):
 
         Return
         ---------
-        An annot object
+        An annotation object
 
         """
         #self._pdb = glob(path.join(path.dirname(__file__), "data","*.sql"))

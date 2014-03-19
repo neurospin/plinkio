@@ -2,20 +2,20 @@
 Tutorial. First examples
 ========================
 
-.. currentmodule:: igutils
+.. currentmodule:: plinkio
 
 Create 1st level objects
 ========================
 Genotype data file and the annotation companion file should be available in 
-igutils/data. Those examples for low level objects instances
+plinkio/data. Those examples for low level objects instances
 
 Read a genotype file
 ~~~~~~~~~~~~~~~~~~~~
 To read the genotype file.
 
-   >>> import igutils as ig
-   >>> gfn = /home/me/igutils/data/batch12QC_N620_autosomes_X
-   >>> genotype = ig.Geno(gfn)
+   >>> import plinkio
+   >>> gfn = /home/me/plinkio/data/batch12QC_N620_autosomes_X
+   >>> genotype = plinkio.Genotype(gfn)
 
 Interrogate the genotype object for a given snp
 
@@ -36,13 +36,13 @@ Interrogate the genotype object for a given snp
     Creation of three objects. All of them may be queried for data and domain dependant
     metainformation (eg. SNPs genes for genodata object).
 
-    The igutils package is not currently connected to a database. The information
+    The plinkio package is not currently connected to a database. The information
     from the db are sinked in a ConfigObj file. See data/image/build_image_db_assessor.py
     scripts to learn about the implicit ontology of this ConfigOj object. One .ini
     file is available and uptodate ImagenW1.ini (Imagen data for wave 1 genotyped
     subjects)
 
-       >>> import igutils as ig
+       >>> import plinkio
        >>> from configobj import ConfigObj
        >>> from os import path
        >>> #Acces to config files
@@ -54,7 +54,7 @@ Interrogate the genotype object for a given snp
     from the svn repository (no need for extra downloading...)
 
        >>> genodata object
-       >>> genodata = ig.GenoData(imagen_wave1_cfg)
+       >>> genodata = plinkio.GenoData(imagen_wave1_cfg)
 
     Now get an instance of the PhenoData class. All the hereby hard coded file are available
     from the svn repository (no need for extra downloading...). Please consider
@@ -64,12 +64,12 @@ Interrogate the genotype object for a given snp
        >>> selection = [['SST', 'swea_mvtroi', 'stop_success - stop_failure'],
                  ['SST', 'swea', 'stop_success - stop_failure']
                 ]
-       >>> roiset =  path.join(path.dirname(ig.__file__), 'data', 'cort_333_LR.nii.gz')
-       >>> phenodata = ig.RoiPhenoData(imagen_wave1_cfg, selection)
+       >>> roiset =  path.join(path.dirname(plinkio.__file__), 'data', 'cort_333_LR.nii.gz')
+       >>> phenodata = plinkio.RoiPhenoData(imagen_wave1_cfg, selection)
        >>> phenodata.aggregate_by_rois(roiset)
 
     Now get an instance of the CovarData class
 
-       >>> covardata = ig.CovarData(imagen_wave1_cfg)
+       >>> covardata = plinkio.CovarData(imagen_wave1_cfg)
        >>> covardata.encode(filter='dummy')
        >>> cdata = covardata.get_covarmatrix()

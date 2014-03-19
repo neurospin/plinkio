@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# igutils documentation build configuration file, created by
+# plinkio documentation build configuration file, created by
 # sphinx-quickstart on Thu Mar 31 10:44:09 2011.
 #
 # This file is execfile()d with the current directory set to its containing dir.
@@ -12,7 +12,7 @@
 # serve to show the default.
 
 import sys, os
-import igutils
+import plinkio
 
 sys.path.append(os.path.abspath('../sphinx-ext'))
 # If extensions (or modules to document with autodoc) are in another directory,
@@ -48,7 +48,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'igutils'
+project = u'plinkio'
 copyright = u'2011, Vincent Frouin, Bertrand Thirion'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -172,7 +172,7 @@ html_static_path = ['_static']
 #html_file_suffix = None
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'igutilsdoc'
+htmlhelp_basename = 'plinkiodoc'
 
 
 # -- Options for LaTeX output --------------------------------------------------
@@ -186,7 +186,7 @@ htmlhelp_basename = 'igutilsdoc'
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-  ('index', 'igutils.tex', u'igutils Documentation',
+  ('index', 'plinkio.tex', u'plinkio Documentation',
    u'V Frouin, B Thirion', 'manual'),
 ]
 
@@ -219,7 +219,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'igutils', u'igutils Documentation',
+    ('index', 'plinkio', u'plinkio Documentation',
      [u'V Frouin, B Thirion'], 1)
 ]
 

@@ -2,11 +2,11 @@
 Installing
 ==============================
 
-.. currentmodule:: igutils
+.. currentmodule:: plinkio
 
 Dependencies
 ============
-igutils module depends on several python modules
+plinkio module depends on several python modules
 
    * numpy (version )
 
@@ -16,7 +16,7 @@ Dependencies for the test submodule
 To be written
 
 
-Installation from svn
+Installation from git
 =====================
 
 Sources

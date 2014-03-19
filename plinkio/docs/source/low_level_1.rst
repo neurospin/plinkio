@@ -2,28 +2,28 @@
 Low level object description
 =============================
 
-.. currentmodule:: igutils
+.. currentmodule:: plinkio
 
-The `GenoAnnot` class
+The `GenotypeAnnotation` class
 =====================
 
-.. autoclass:: igutils.GenoAnnot
+.. autoclass:: plinkio.GenotypeAnnotation
     :members:
     :inherited-members:
 
 
-.. currentmodule:: igutils
+.. currentmodule:: plinkio
 
-The `Geno` class
+The `Genotype` class
 ================
 
-.. autoclass:: igutils.Geno
+.. autoclass:: plinkio.Genotype
     :members:
     :inherited-members:
 
-The `Annot` class
+The `Annotation` class
 =================
 
-.. autoclass:: igutils.Annot
+.. autoclass:: plinkio.Annotation
     :members:
     :inherited-members:

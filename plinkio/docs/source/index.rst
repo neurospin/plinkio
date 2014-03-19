@@ -1,9 +1,9 @@
-.. igutils documentation master file, created by
+.. plinkio documentation master file, created by
    sphinx-quickstart on October 15 2013.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Documentation igutils
+Documentation plinkio
 =====================
 
 Contents:
@@ -18,12 +18,12 @@ Contents:
 Introduction
 ------------
 
-.. automodule:: igutils
+.. automodule:: plinkio
 
 Module contents
 ----------------
 
-.. currentmodule :: igutils
+.. currentmodule :: plinkio
 
 
 Indices and tables
