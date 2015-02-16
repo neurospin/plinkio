@@ -20,7 +20,7 @@ execfile(os.path.join("plinkio", "info.py"), release_info)
 
 # Build the setup
 setup(
-    name=release_info["NAME"],
+    name="python-{0}".format(release_info["NAME"]),
     description=release_info["DESCRIPTION"],
     long_description=release_info["LONG_DESCRIPTION"],
     license=release_info["LICENSE"],
@@ -30,7 +30,9 @@ setup(
     version=release_info["VERSION"],
     url=release_info["URL"],
     packages=find_packages(),
+    package_data={},
     platforms=release_info["PLATFORMS"],
     extras_require=release_info["EXTRA_REQUIRES"],
-    install_requires=release_info["REQUIRES"]
+    install_requires=release_info["REQUIRES"],
+    scripts=[]
 )

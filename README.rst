@@ -2,16 +2,16 @@
 plinkio
 =========
 
-.. image:: https://pypip.in/version/plinkio/badge.png
-    :target: https://pypi.python.org/pypi/plinkio/
+.. image:: https://pypip.in/version/python-plinkio/badge.png
+    :target: https://pypi.python.org/pypi/python-plinkio/
     :alt: Latest Version
     
-.. image:: https://pypip.in/status/plinkio/badge.png
-    :target: https://pypi.python.org/pypi/plinkio/
+.. image:: https://pypip.in/status/python-plinkio/badge.png
+    :target: https://pypi.python.org/pypi/python-plinkio/
     :alt: Development Status
 
-.. image:: https://pypip.in/license/plinkio/badge.png
-    :target: https://pypi.python.org/pypi/plinkio/
+.. image:: https://pypip.in/license/python-plinkio/badge.png
+    :target: https://pypi.python.org/pypi/python-plinkio/
     :alt: License
 
 
