@@ -17,7 +17,7 @@ from numpy import where
 
 
 class Annotation(object):
-    """
+    """ ToDo
     """
 
     def __init__(self, source=None, resources=None, MaskWithGenotype=None):
@@ -25,14 +25,14 @@ class Annotation(object):
         Annotation(source, Mask) return an Annotation object. really ugly.
         implicit name finding of the sql file.
 
-        Parameter
-        ---------
+        Parameters
+        ----------
         source :  id of the manifacturer chip
 
         Mask : TO BE FIX
 
-        Return
-        ---------
+        Returns
+        -------
         An annotation object
 
         """
@@ -67,8 +67,8 @@ class Annotation(object):
         GetRsByGene(geneName) : return a list of SNP paving the transcribed
         part of the gene
 
-        Parameter
-        ---------
+        Parameters
+        ----------
         geneName :  a str for one gene symbol
 
         part : "TR", "HTR", "HTRT" # TO BE FIX
@@ -80,8 +80,8 @@ class Annotation(object):
 
         trailer : inerger to specify bp length in bp
 
-        Return
-        ---------
+        Returns
+        -------
         list of SNP (rsname)
 
         """
@@ -107,12 +107,12 @@ class Annotation(object):
     def getRsByChrom(self, chrNum):
         """
         getGeneByRs(rsname) :  return a list of SNP for a chrom
-        Parameter
-        ---------
+        Parameters
+        ----------
         chrNum : <1..22, 23(X), 24(Y)>
 
-        Return
-        ---------
+        Returns
+        -------
         list of SNP (rsname)
         """
         cmd = "SELECT name FROM dbsnp \
@@ -127,12 +127,12 @@ class Annotation(object):
         """
         getGeneByRs(rsname) : return the gene containing the SNP (rsname)
 
-        Parameter
-        ---------
+        Parameters
+        ----------
         rsname :  a str for one SNP symbol
 
-        Return
-        ---------
+        Returns
+        -------
         the corresponding Gene
         """
         cmd = 'SELECT dbsnp.start, dbsnp.stop, dbsnp.chrom \

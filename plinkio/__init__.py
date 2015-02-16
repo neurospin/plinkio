@@ -22,7 +22,9 @@ In the current state of development it offers:
 
 
 """
-__version__ = '0.1'
+from info import __version__
+
+
 #import assoc
 #import tests             #TODO : no depends on rpy2 and plink commandline
 #import pheno

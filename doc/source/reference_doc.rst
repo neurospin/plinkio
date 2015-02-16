@@ -23,12 +23,10 @@ Contents:
    low_level_1.rst
 
 The 2nd level classes (TO BE UPDATED)
-=====================
+=====================================
 Description of the mono block classes for genodata, phenodata and covariate - in my mind the data from the patient record - (so covariate may be an non-adequate name).
 
 Contents:
 
 .. toctree::
    :maxdepth: 2
-
-   monoblock_level_1.rst
