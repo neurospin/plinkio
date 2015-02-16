@@ -3,6 +3,13 @@
 # C extensions
 *.so
 
+# Temp/log
+*.log
+*~
+
+# Doc
+build/
+
 # Packages
 *.egg
 *.egg-info

@@ -21,25 +21,12 @@ import Annotation
 
 
 class GenotypeAnnotation(object):
-    """Provides object/method to support annotation on genoptype data
+    """ Provides object/method to support annotation on genoptype data.
     """
-    #Fields:
-    #-------
-    #autosomHuman : list of autsomal chromosom to consider
-    #Methods:
-    #--------
-    #snpDim():
-    #snpChromDim():
-    #snpList():
-    #assayDim():
-    #assayFID():
-    #assayIID():
-    #"""
     autosomeHuman = range(1, 23)
 
     def __init__(self, source, format):
-        """
-
+        """ ToDo
         """
         self._format = format
         self._encode = annot.assay.encodeMinAllCount
@@ -64,7 +51,8 @@ class GenotypeAnnotation(object):
         #if self._filename:
 
     def snpDim(self):
-        """
+        """ ToDo
+
         Returns
         -------
         int
@@ -73,7 +61,8 @@ class GenotypeAnnotation(object):
         return len(self._snp)
 
     def snpChromDim(self):
-        """
+        """ ToDo
+
         Returns
         -------
         list
@@ -85,7 +74,8 @@ class GenotypeAnnotation(object):
         return chrList
 
     def snpList(self):
-        """
+        """ ToDo
+
         Returns
         -------
         list
@@ -94,10 +84,12 @@ class GenotypeAnnotation(object):
         return self._snp['f1']
 
     def assayDim(self):
+        """ ToDo
+        """
         return len(self._assay)
 
     def assayFID(self):
-        """return the list of family enrolled in the assay
+        """ return the list of family enrolled in the assay
 
         Returns
         -------
@@ -116,7 +108,7 @@ class GenotypeAnnotation(object):
         return ret_list
 
     def assayIID(self):
-        """return the list of subject enrolled in the assay
+        """ return the list of subject enrolled in the assay
 
         Returns
         -------
@@ -136,35 +128,15 @@ class GenotypeAnnotation(object):
 
 
 class Genotype(GenotypeAnnotation):
-    """Provides object/method to support the data from a genotype file
+    """ Provides object/method to support the data from a genotype file
     """
-    #Parameter
-    #---------
-        #GenotypeAnnotation : a GenotypeAnnotation object describing the genotyping assay
-
-    #Methods
-    #-------
-        #preload(self):
-            #Load Binary bed
-        #setOrderedSubsetIndiv(self, idList=[]):
-            #set a list as ordering index for subsequent queries
-        #getOrderedSubsetIndiv(self):
-            #get the current list used as ordering index for subsequent
-            #queries
-        #snpGenotypeByName(self, rsname):
-            #query to get by SNP name genotyping data ordered along with orderedSubset
-            #list if it exists or in the order of the load otherwise
-        #snpGenotypeAll(self):
-            #query to get the whole genotyping data ordered along with orderedSubset
-            #list if it exists or in the order of the load otherwise
-
     def __init__(self, source,
                  format="bed",
                  annot="default",
                  resources=path.join(path.dirname(__file__),
                                      "..", "data", "template", "platform"),
                  load=False):
-        """
+        """ ToDo
         """
         GenotypeAnnotation.__init__(self, source, format)
         #try:
@@ -191,18 +163,17 @@ class Genotype(GenotypeAnnotation):
                              "and filename string are supported.")
 
     def __del__(self):
-        """Do all necessary cleanups.
+        """ Do all necessary cleanups.
         """
         self._data = None
 
     def load(self):
-        """
+        """ ToDo
         not used ?
         """
 
     def preload(self):
-        """
-        lazy loading of annot and binary bed
+        """ lazy loading of annot and binary bed
         """
         if self._snp_major:
             self._data = io.bplinkread.bedRead(self._filename['bed'])
@@ -210,8 +181,7 @@ class Genotype(GenotypeAnnotation):
             raise ValueError("Not snp_major format Unsupported bed type.")
 
     def setOrderedSubsetIndiv(self, idList=[]):
-        """
-        set a list as ordering index for subsequent queries on snps
+        """ set a list as ordering index for subsequent queries on snps
         """
         tmp = self.assayIID()
         retOSL = []
@@ -226,26 +196,24 @@ class Genotype(GenotypeAnnotation):
         return retOSL, retMiss
 
     def getOrderedSubsetIndiv(self):
-        """
-        get the current list used as ordering index for subsequent
+        """ get the current list used as ordering index for subsequent
         queries on snps
         """
         return [self.assayIID()[x] for x in self._orderedSubset]
 
     def getOrderedSubsetFamily(self):
-        """
-        get the current list used as ordering index for subsequent
+        """ get the current list used as ordering index for subsequent
         queries on snps
         """
         return [self.assayFID()[x] for x in self._orderedSubset]
 
     def getChipAnnot(self):
-        """return the instance of the ChipAnnot that describe the dataset
+        """ return the instance of the ChipAnnot that describe the dataset
         """
         return self._chipAnnot
 
     def snpGenotypeByName(self, rsname):
-        """return genotyping data as an array. The columns are in the snp of the
+        """ return genotyping data as an array. The columns are in the snp of the
         rsname list and lines are ordered along with order
         specified by the setOrderedSubsetIndiv() or in the order of the load
         otherwise
@@ -274,7 +242,7 @@ class Genotype(GenotypeAnnotation):
         return gt[self._orderedSubset, :]
 
     def estimate_maf_by_name(self, rsname):
-        """query maf  by snp name
+        """ query maf  by snp name
 
         Parameters
         ----------
@@ -296,7 +264,7 @@ class Genotype(GenotypeAnnotation):
         return (2.0 * hom1 + het) / n
 
     def estimate_maf_genotype(self, gt):
-        """query maf for some genotyped data
+        """ query maf for some genotyped data
 
         Parameters
         ----------
@@ -317,8 +285,7 @@ class Genotype(GenotypeAnnotation):
         return (2.0 * homozygote_min + het) / n
 
     def snpGenotypeAll(self, test=False):
-        """
-        query to get the whole genotyping data ordered along with orderedSubset
+        """ query to get the whole genotyping data ordered along with orderedSubset
         list if it exists or in the order of the load otherwise
 
         Returns

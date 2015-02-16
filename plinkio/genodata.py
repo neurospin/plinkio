@@ -52,6 +52,8 @@ class GenoData(object):
         self._genotype.setOrderedSubsetIndiv(self._subjects)
 
     def _get_genotype(self):
+        """
+        """
         return self._genotype
 
     def select_extract_snp(self, rs):
