@@ -2,15 +2,15 @@
 plinkio
 =========
 
-.. image:: https://pypip.in/version/python-plinkio/badge.png
+.. image:: https://img.shields.io/pypi/v/python-plinkio.svg
     :target: https://pypi.python.org/pypi/python-plinkio/
     :alt: Latest Version
     
-.. image:: https://pypip.in/status/python-plinkio/badge.png
+.. image:: https://img.shields.io/pypi/status/python-plinkio.svg
     :target: https://pypi.python.org/pypi/python-plinkio/
     :alt: Development Status
 
-.. image:: https://pypip.in/license/python-plinkio/badge.png
+.. image:: https://img.shields.io/pypi/l/python-plinkio.svg
     :target: https://pypi.python.org/pypi/python-plinkio/
     :alt: License
 
