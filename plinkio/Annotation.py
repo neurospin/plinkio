@@ -40,8 +40,8 @@ class Annotation(object):
         self._pdb = glob(path.join(resources, "*.sql"))
 
         if source is None:
-            print [(path.basename(x).split("_")[1],
-                   path.basename(x))for x in self._pdb]
+            print([(path.basename(x).split("_")[1],
+                   path.basename(x))for x in self._pdb])
             return
         platform = source + '.sql'
         #print platform

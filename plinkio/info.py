@@ -38,7 +38,7 @@ CLASSIFIERS = [
 description = "plinkio"
 long_description = """
 ========
-PLINKIO 
+PLINKIO
 ========
 
 PLINK file I/O.

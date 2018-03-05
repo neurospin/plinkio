@@ -1,3 +1,4 @@
 # -*- coding: utf-8 -*-
 
-import chip, assay
+import chip
+import assay
